@@ -6,10 +6,12 @@ function App() {
 
   // api call from laravel
   const laravelApiTest = () => {
-    fetch('localhost:8000/api/test')
+    fetch('http://192.168.101.207:8000/api/test')
       .then(response => response.json())
       .then(data => console.log('data', data))
       .catch(error => console.log(error))
+
+      console.log("banaan")
   }
   
   laravelApiTest();
