@@ -1,6 +1,6 @@
 import React from "react";
 
-import {MapContainer, CircleMarker, TileLayer, Popup} from 'react-leaflet'
+import {MapContainer, CircleMarker, TileLayer, Popup} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 // import mapData from './geoJSON/bedrijven_normal_json.json'
@@ -18,10 +18,9 @@ class Map extends React.Component {
         return (
             <MapContainer
             center={this.mapCenter}
-            zoom={12}
+            zoom={13}
             style={{width: '100%', height: '100%'}}
           >
-          
           <TileLayer
             url="https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmllbHNkb2JiZWxhYXIiLCJhIjoiY2wxMjN4anhjMDJvYjNlcGR3ZDVwN2RhbiJ9.M3p510hqjAir3XSYRvPqsQ"
             maxZoom={20}
