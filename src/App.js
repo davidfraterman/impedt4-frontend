@@ -1,6 +1,7 @@
 import './App.css';
 
 import Header from './components/UI/Header';
+import Map from "./components/UI/Map"
 
 function App() {
 
@@ -14,12 +15,12 @@ function App() {
       console.log("banaan")
   }
   
-  laravelApiTest();
+  // laravelApiTest();
 
 
   return (
     <div className="App">
-      <Header />
+      <Map />
     </div>
   );
 }
