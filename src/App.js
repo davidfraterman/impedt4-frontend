@@ -31,7 +31,10 @@ function App() {
 
   return (
     <div className="App">
-      <Map />
+      <section className="map">
+        <Map />
+      </section>
+      
     </div>
   );
 }

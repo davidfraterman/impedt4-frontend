@@ -26,3 +26,8 @@ html {
   font-family: 'Poppins', sans-serif;
   background: #fff;
 }
+
+.map{
+  width: 100vw;
+  height: 100vh;
+}
