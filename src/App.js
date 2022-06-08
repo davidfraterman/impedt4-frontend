@@ -2,7 +2,7 @@ import axios from 'axios';
 import './App.css';
 
 import Header from './components/UI/Header';
-import Map from "./components/UI/Map"
+import Map from "./pages/Map/Map"
 
 function App() {
 
