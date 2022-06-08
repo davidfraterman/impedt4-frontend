@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import {MapContainer, CircleMarker, TileLayer, Popup} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
+import "./Map.css";
 
 
 
@@ -34,45 +35,89 @@ class Map extends React.Component {
         
       <div>
       {this.getData().map((data, i) => {
-
-      if(data.relevant == 1 && data.gepland == 0 && data.todo == 0){
+      
+      //markers die niet geconroleerd te hoeven worden
+      if(data.relevant == 1 && data.gepland == 0 && data.todo == 0 && data.plan == 0){
         return(
           <div>
             <CircleMarker key={"bedrijf"} 
-            radius={3} 
+            radius={5} 
             color={"black"}
             weight={1}
             fillColor={"grey"}
             fillOpacity={1}
             center={[parseFloat(data.latitude.replace(",",".")), parseFloat(data.longitude.replace(",","."))]}>
+              <Popup>
+                <h1>Bedrijf</h1>
+                <p>Info: {data.category}</p>
+                <p>Risicofactor: {data.riskindicator}%</p>
+              </Popup>
             </CircleMarker>
           </div>
           )
       }
-      if(data.relevant == 1 && data.gepland == 1 && data.todo == 0){
+
+      //markers die gecontroleerd moeten worden
+      if(data.relevant == 1 && data.gepland == 1 && data.todo == 0 && data.plan == 0){
         return(
           <div>
             <CircleMarker key={"bedrijf"} 
-            radius={3} 
+            radius={10} 
             color={"black"}
             weight={1}
             fillColor={"blue"}
             fillOpacity={1}
             center={[parseFloat(data.latitude.replace(",",".")), parseFloat(data.longitude.replace(",","."))]}>
+              <Popup>
+              <h1>Bedrijf</h1>
+                <p>Info: {data.category}</p>
+                <p>Risicofactor: {data.riskindicator}%</p>
+                <button>Toevoegen aan ToDo</button>
+              </Popup>
             </CircleMarker>
           </div>
           )
       }
-      if(data.relevant == 1 && data.gepland == 1 && data.todo == 1){
+
+      //markers die toegevoegd zijn aan de to do list
+      if(data.relevant == 1 && data.gepland == 1 && data.todo == 1 && data.plan == 0){
         return(
           <div>
             <CircleMarker key={"bedrijf"} 
-            radius={3} 
+            radius={10} 
             color={"black"}
             weight={1}
-            fillColor={"green"}
+            fillColor={"orange"}
             fillOpacity={1}
             center={[parseFloat(data.latitude.replace(",",".")), parseFloat(data.longitude.replace(",","."))]}>
+              <Popup>
+              <h1>Bedrijf</h1>
+                <p>Info: {data.category}</p>
+                <p>Risicofactor: {data.riskindicator}%</p>
+                <button>Bedrijf is gecontroleerd</button>
+              </Popup>
+            </CircleMarker>
+          </div>
+          )
+      }
+
+      //markers van bedrijven die gecontroleerd zijn
+      if(data.relevant == 1 && data.gepland == 1 && data.todo == 0 && data.plan == 1){
+        return(
+          <div>
+            <CircleMarker key={"bedrijf"} 
+            radius={5} 
+            color={"black"}
+            weight={1}
+            fillColor={"lime"}
+            fillOpacity={1}
+            center={[parseFloat(data.latitude.replace(",",".")), parseFloat(data.longitude.replace(",","."))]}>
+              <Popup>
+              <h1>Bedrijf</h1>
+                <h2>Gecontroleerd!</h2>
+                <p>Info: {data.category}</p>
+                <p>Risicofactor: {data.riskindicator}%</p>
+              </Popup>
             </CircleMarker>
           </div>
           )

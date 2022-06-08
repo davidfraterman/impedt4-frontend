@@ -1,0 +1,9 @@
+button{
+    width: 10rem;
+    height: 2rem;
+}
+
+button:hover{
+    cursor:pointer;
+
+}
