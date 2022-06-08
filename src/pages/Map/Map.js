@@ -6,7 +6,7 @@ import 'leaflet/dist/leaflet.css';
 // import mapData from './geoJSON/bedrijven_normal_json.json'
 
 // import L from 'leaflet';
-// import './MyMap.css';
+import './Map.module.css';
 
 
 class Map extends React.Component {
