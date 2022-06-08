@@ -1,4 +1,3 @@
-
 const Header = (props) => {
     return (
         <header className="header">
@@ -13,17 +12,16 @@ const Header = (props) => {
                         </a>
                     </li>
                     <li className="header__navigation-item">
-                        <a href="/" className="header__navigation-link">
-                            About
+                        <a href="/kaart" className="header__navigation-link">
+                            Map
                         </a>
                     </li>
                     <li className="header__navigation-item">
-                        <a href="/" className="header__navigation-link">
-                            Contact
+                        <a href="/todo" className="header__navigation-link">
+                            Todo
                         </a>
                     </li>
                 </ul>
-                Hallo
             </div>
         </header>
     )

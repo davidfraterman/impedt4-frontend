@@ -1,38 +1,32 @@
-import axios from 'axios';
-import './App.css';
+import { createBrowserHistory } from 'history'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Header from './components/UI/Header';
-import Map from "./components/UI/Map"
+import Login from './pages/AuthPage/AuthPage';
+import Home from './pages/HomePage/HomePage';
+import AddCompany from './pages/AddCompanyPage/AddCompanyPage';
+import Map from './pages/MapPage/MapPage';
+import NotFound from './pages/NotFoundPage/NotFoundPage';
+import Header from './components/layout/Header';
+import Todo from './pages/TodoPage/TodoPage';
 
-function App() {
-
-  // api call from laravel
-  const laravelApiTest = () => {
-
-    axios.get('http://127.0.0.1:8000/api/bedrijven')
-      .then(res => {
-        const bedrijven = res.data;
-        // console.log([bedrijven[0].latitude, bedrijven[0].longitude]);
-        // return(bedrijven);
-      })
-
-    
-
-    // fetch('http://127.0.0.1:8000/api/bedrijven')
-    //   .then(response => response.json())
-    //   .then(data => console.log('data', data))
-    //   .catch(error => console.log(error))
-
-      // console.log("banaan")
-  }
-  
-  // laravelApiTest();
-
-
+const App = () => {
   return (
-    <div className="App">
-      <Map />
-    </div>
+    <Router>
+      {/* header */}
+      <Header />
+
+      {/* de verschillende paginas er onder */}
+      <Routes history={createBrowserHistory}>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/kaart" element={<Map />} />
+        <Route path="/nieuw" element={<AddCompany />} />
+        <Route path="/todo" element={<Todo />} />
+
+        {/* Als path niet bestaat, ga naar not found */}
+        <Route path="*" exact={true} element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 }
 
