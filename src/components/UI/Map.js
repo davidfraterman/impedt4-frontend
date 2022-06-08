@@ -53,18 +53,23 @@ class Map extends React.Component {
       return(
       <div>
       {this.getData().map((data, i) => {
-      return(
-        <div>
-          <CircleMarker key={"bedrijf"} 
-          radius={3} 
-          color={"black"}
-          weight={1}
-          fillColor={"yellow"}
-          fillOpacity={1}
-          center={[parseFloat(data.latitude.replace(",",".")), parseFloat(data.longitude.replace(",","."))]}>
-          </CircleMarker>
-        </div>
-        )})}
+
+      if(data.status == 1){
+        console.log(data.status)
+        return(
+          <div>
+            <CircleMarker key={"bedrijf"} 
+            radius={3} 
+            color={"black"}
+            weight={1}
+            fillColor={"yellow"}
+            fillOpacity={1}
+            center={[parseFloat(data.latitude.replace(",",".")), parseFloat(data.longitude.replace(",","."))]}>
+            </CircleMarker>
+          </div>
+          )
+      }
+      })}
       </div>
       )
       
