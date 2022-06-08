@@ -25,33 +25,55 @@ import L from 'leaflet';
   // return(coords);
 // }
 
-const getLat = (id) => {
-  let latt;
-  axios.get('http://127.0.0.1:8000/api/bedrijven')
-    .then(res => {
-      const bedrijven = res.data;
-      let lat = bedrijven[id].latitude;
-      lat = parseFloat(lat.replace(",","."));
-      trekken(lat);
-    }
-  )
-}
-
-const trekken = (data) => {
-  let lat = data
-  return(lat);
-}
 
 
 class Map extends React.Component {
-    state = {
+    constructor(props){
+      super(props);
+      this.state = {
+        bedrijven: []
+      }
+    }
+    
+    componentDidMount() {
+      axios.get('http://127.0.0.1:8000/api/bedrijven')
+        .then(res => {
+          this.setState({bedrijven: res.data})
+        })
+        .catch (function (error) {
+          console.log(error);
+        });
+    }
+
+    getData() {
+      return this.state.bedrijven
+    }
+
+    getMarker = () => {
+      return(
+      <div>
+      {this.getData().map((data, i) => {
+      return(
+        <div>
+          <CircleMarker key={"bedrijf"} 
+          radius={3} 
+          color={"black"}
+          weight={1}
+          fillColor={"yellow"}
+          fillOpacity={1}
+          center={[parseFloat(data.latitude.replace(",",".")), parseFloat(data.longitude.replace(",","."))]}>
+          </CircleMarker>
+        </div>
+        )})}
+      </div>
+      )
+      
     }
 
     mapCenter = [51.44402355, 5.472920898];
 
     render() {
-      console.log(getLat(0));
-        return (
+      return (
           <MapContainer
             center={this.mapCenter}
             zoom={13}
@@ -62,9 +84,7 @@ class Map extends React.Component {
             maxZoom={20}
           >
           </TileLayer>
-          {/* <CircleMarker center={[coords(0)[0], coords(0)[1]]}>
-
-          </CircleMarker> */}
+            {this.getMarker()}
           </MapContainer>
         );
     }
