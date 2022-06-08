@@ -1,13 +1,13 @@
 import { createBrowserHistory } from 'history'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Login from './pages/Auth/Auth';
-import Home from './pages/Home/Home';
-import AddCompany from './pages/AddCompany/AddCompany';
-import Map from './pages/Map/Map';
-import NotFound from './pages/NotFound/NotFound';
+import Login from './pages/AuthPage/AuthPage';
+import Home from './pages/HomePage/HomePage';
+import AddCompany from './pages/AddCompanyPage/AddCompanyPage';
+import Map from './pages/MapPage/MapPage';
+import NotFound from './pages/NotFoundPage/NotFoundPage';
 import Header from './components/layout/Header';
-import Todo from './pages/Todo/Todo';
+import Todo from './pages/TodoPage/TodoPage';
 
 const App = () => {
   return (
