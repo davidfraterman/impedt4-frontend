@@ -3,35 +3,6 @@ import axios from 'axios';
 
 import {MapContainer, CircleMarker, TileLayer, Popup} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-
-// import mapData from './geoJSON/bedrijven_normal_json.json'
-
-<<<<<<< HEAD:src/components/UI/Map.js
-import L from 'leaflet';
-// import './MyMap.css';
-// const coords = () => {
-//   let data;
-//   axios.get('http://127.0.0.1:8000/api/bedrijven')
-//     .then(res => {
-//       const bedrijven = res.data;
-//       this.setState({bedrijven});
-//     })
-    // console.log(data);
-  //   let lat = data[id].latitude;
-  //   let long = data[id].longitude;
-  //   lat = parseFloat(lat.replace(",","."));
-  //   long = parseFloat(long.replace(",","."));
-  //   // coords.push(lat, long);
-  //   coords = [lat, long];
-  // return(coords);
-// }
-
-=======
-// import L from 'leaflet';
-import './Map.module.css';
->>>>>>> d53c649154d0b70246b833cc7baa70ef7057ae07:src/pages/Map/Map.js
-
-
 class Map extends React.Component {
     constructor(props){
       super(props);
