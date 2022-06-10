@@ -1,7 +1,12 @@
+import { createBrowserHistory } from 'history'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import axios from 'axios';
 import './App.css';
 import React from 'react';
-import login from ./Auth
+
+
+import Login from './pages/Auth/Auth';
 /*
 import Header from './components/UI/Header';
 import Map from "./components/UI/Map"
