@@ -1,7 +1,7 @@
 import axios from 'axios';
 import './App.css';
 import React from 'react';
-
+import login from ./Auth
 /*
 import Header from './components/UI/Header';
 import Map from "./components/UI/Map"
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="App">
-
+       <Route path="/login" element={<Login />} />
     </div>
   );
 }
