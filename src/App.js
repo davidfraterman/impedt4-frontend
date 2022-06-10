@@ -38,7 +38,10 @@ function App() {
 
   return (
     <div className="App">
-       <Route path="/login" element={<Login />} />
+      <Login></Login>
+      <Routes history={createBrowserHistory}>
+        <Route exact to="/login" component={Login} />
+      </Routes>
     </div>
   );
 }
