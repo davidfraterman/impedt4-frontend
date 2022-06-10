@@ -1,39 +1,32 @@
-import axios from 'axios';
-import './App.css';
+import React, { lazy } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import * as ROUTES from "./constants/routes";
 
-import Header from './components/UI/Header';
-import Map from "./components/UI/Map"
-
-function App() {
-
-  // api call from laravel
-  const laravelApiTest = () => {
-
-    axios.get('http://127.0.0.1:8000/api/bedrijven')
-      .then(res => {
-        const bedrijven = res.data;
-        // console.log([bedrijven[0].latitude, bedrijven[0].longitude]);
-        // return(bedrijven);
-      })
-
-    
-
-    // fetch('http://127.0.0.1:8000/api/bedrijven')
-    //   .then(response => response.json())
-    //   .then(data => console.log('data', data))
-    //   .catch(error => console.log(error))
-
-      // console.log("banaan")
-  }
-  
-  // laravelApiTest();
+import Header from "./components/layout/Header";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Auth/Auth";
+// import Map from "./pages/Map/Map";
+import Todo from "./pages/Todo/Todo";
 
 
+const App = () => {
   return (
-    <div className="App">
-      <Map />
-    </div>
+    <>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path={ROUTES.HOME} element={<Home />} />
+          <Route path={ROUTES.LOGIN} element={<Login />} />
+          {/* <Route path={ROUTES.KAART} element={<Map />} /> */}
+          <Route path={ROUTES.TODO} element={<Todo />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
-}
+};
 
 export default App;
