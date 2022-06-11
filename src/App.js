@@ -1,8 +1,11 @@
+import React from 'react';
+
 import axios from 'axios';
 import './App.css';
 
-import Header from './components/UI/Header';
-import Map from "./components/UI/Map"
+import Header from './components/layout/Header';
+import Todo from './pages/Todo/Todo';
+// import Map from "./components/UI/Map"
 
 function App() {
 
@@ -31,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <Map />
+      <Todo />
     </div>
   );
 }
