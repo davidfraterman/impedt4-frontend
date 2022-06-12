@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;600&family=Poppins:wght@600&display=swap');
+
+.main-login{
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    padding: 90px 0 90px 0;
+    background-color: white;
+
+}
+
+.sub-main-login{
+    display: block;
+    justify-content: center;
+    height: 550px;
+    width: 21rem;
+    padding-top: 30px;
+    border-radius: 60px;
+    background-color: white;
+}
+
+.imgs{
+    padding-top: 20px;
+    justify-content: left;
+    padding-left: 18px;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.login-titel{
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-image{
+    background-color: rgb(223, 221, 225);
+    border-radius: 150px;
+    align-items: center;
+    display: flex;
+    height: 90px;
+    width: 90px;
+}
+
+.profile{
+    height: 50px;
+    width: 50px;
+    border-radius: 130px;
+}
+
+.email-titel{
+    justify-content: left;
+    padding-left: 26px;
+    display: flex;
+    font-size: 14px;
+    font-family: 'Lexend Deca', sans-serif;
+    color: #8E8E8E;
+}
+
+input{
+    width: 300px;
+    height: 50px;
+    font-family: 'Lexend Deca', sans-serif;
+    border-radius: 15px;
+    border: #8E8E8E;
+    box-shadow: inset 0px 0px 3px 0px #8E8E8E;;
+    text-indent: 55px;
+
+    
+}
+
+.email{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    padding: 17px 0 0 25px;
+}
+
+.password{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    padding: 16px 0 0 25px;
+}
+
+.name{
+    margin-bottom: 17px;
+    margin-top: 4px;
+}
+
+.login-button{
+    background-color: #C61B00;
+    width: 300px;
+    height: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 0 0 rgb(0 0 0 / 0.05);
+    border-style: none;
+    font-family: 'Lexend Deca', sans-serif;
+    color: white;
+    font-weight: bold;
+}
