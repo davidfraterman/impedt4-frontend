@@ -4,6 +4,7 @@
   --clr-black: #353535;
   --clr-main: #C61B00;
   --clr-white: #FAFAFA;
+  --clr-light-grey: #eeeeee;
 }
 
 * {
@@ -12,17 +13,10 @@
 }
 
 #root{
-  width: 100vw;
-  height: 100vh;
-
-}
-
-.App{
-  width: inherit;
-  height: inherit;
+  min-height: 100vh;
 }
 
 html {
   font-family: 'Poppins', sans-serif;
-  background: #fff;
+  background-color: var(--clr-white);
 }

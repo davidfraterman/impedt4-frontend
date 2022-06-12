@@ -1,0 +1,71 @@
+.todoContainer {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.todoTitleWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.todoTitle {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.todoList {
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.03);
+  border: 1px solid var(--clr-light-grey);
+}
+
+.todoListTable {
+  width: 100%;
+  border-radius: 1rem;
+  border-collapse: collapse;
+}
+
+.todoListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 1rem;
+}
+
+td {
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: var(--clr-black);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+table {
+  width: 100%;
+  background-color: white;
+}
+
+thead {
+  color: var(--clr-black);
+  border-bottom: 1px solid var(--clr-light-grey);
+}
+
+th {
+  padding: 1.2rem 2rem;
+  text-align: left;
+  font-weight: 500;
+  color: var(--clr-black);
+}
+
+tr {
+  border-bottom: 1px solid var(--clr-light-grey);
+  transition: 0.1s all;
+}
+
+tr:nth-last-child(1) {
+  border-bottom: none;
+}
