@@ -18,8 +18,8 @@
 
 .todoList {
   border-radius: 1rem;
-  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.03);
-  border: 1px solid var(--clr-light-grey);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.05);
+  border: 1px solid rgb(235, 235, 235);
 }
 
 .todoListTable {
@@ -51,7 +51,7 @@ table {
 
 thead {
   color: var(--clr-black);
-  border-bottom: 1px solid var(--clr-light-grey);
+  border-bottom: 1px solid rgb(244, 244, 244);
 }
 
 th {
@@ -62,7 +62,7 @@ th {
 }
 
 tr {
-  border-bottom: 1px solid var(--clr-light-grey);
+  border-bottom: 1px solid rgb(244, 244, 244);
   transition: 0.1s all;
 }
 
