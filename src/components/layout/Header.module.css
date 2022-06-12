@@ -1,3 +1,77 @@
-* {
-    background-color: red;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #C61B00;
+}
+
+.header__logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+
+.header__navigation {
+    display: flex;
+    align-items: center;
+}
+
+.hamburgerMenu__links {
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background-color: #C61B00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+    font-weight: 500;
+    animation: hamburgerLinks 0.3s ease;
+}
+
+@keyframes hamburgerLinks {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hamburgerMenu__icon {
+    color: white;
+}
+.hamburgerMenu__icon:hover {
+    cursor: pointer;
+}
+
+.hamburgerMenu__links .link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+.hamburgerMenu__links .link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.closeIcon {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: white;
+    transition: 0.4s all;
+}
+.closeIcon:hover {
+    cursor: pointer;
+    transform: rotate(90deg);
 }

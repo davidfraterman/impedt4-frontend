@@ -1,33 +1,31 @@
-import { createBrowserHistory } from 'history'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { lazy } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import * as ROUTES from "./constants/routes";
 
-import Login from './pages/AuthPage/AuthPage';
-import Home from './pages/HomePage/HomePage';
-import AddCompany from './pages/AddCompanyPage/AddCompanyPage';
-import Map from './pages/MapPage/MapPage';
-import NotFound from './pages/NotFoundPage/NotFoundPage';
-import Header from './components/layout/Header';
-import Todo from './pages/TodoPage/TodoPage';
+import Header from "./components/layout/Header";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Auth/Auth";
+// import Map from "./pages/Map/Map";
+import Todo from "./pages/Todo/Todo";
 
 const App = () => {
   return (
-    <Router>
-      {/* header */}
-      <Header />
-
-      {/* de verschillende paginas er onder */}
-      <Routes history={createBrowserHistory}>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/kaart" element={<Map />} />
-        <Route path="/nieuw" element={<AddCompany />} />
-        <Route path="/todo" element={<Todo />} />
-
-        {/* Als path niet bestaat, ga naar not found */}
-        <Route path="*" exact={true} element={<NotFound />} />
-      </Routes>
-    </Router>
+    <>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path={ROUTES.HOME} element={<Home />} />
+          <Route path={ROUTES.LOGIN} element={<Login />} />
+          {/* <Route path={ROUTES.KAART} element={<Map />} /> */}
+          <Route path={ROUTES.TODO} element={<Todo />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
-}
+};
 
 export default App;
