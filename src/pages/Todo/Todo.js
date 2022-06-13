@@ -3,25 +3,20 @@ import TodoList from './components/TodoList'
 import { Icon } from '@iconify/react';
 import styles from './Todo.module.css';
 
+import axios from 'axios';
+
 const Todo = () => {
 
-  const companies = [
-    {
-      id: 1,
-      name: 'Company 1',
-      address: 'Address 1',
-    },
-    {
-      id: 2,
-      name: 'Company 2',
-      address: 'Address 2',
-    },
-    {
-      id: 3,
-      name: 'Company 3',
-      address: 'Address 3',
-    },
-  ];
+  const [bedrijven, setBedrijven] = React.useState([]);
+  // useffect
+  React.useEffect(() => {
+    axios.get('http://localhost:8000/api/bedrijven')
+      .then(res => {
+        setBedrijven(res.data);
+      }).catch(err => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <section className={styles.todoContainer}>
@@ -31,14 +26,14 @@ const Todo = () => {
       </section>
       <section className={styles.todoList}>
         <TodoList companies={
-          companies.map(company => {
+          bedrijven.map(company => {
             return {
               id: company.id,
-              name: company.name,
-              address: company.address,
+              category: company.category,
+              riskindicator: company.riskindicator,
             }
           })
-        }/>
+        } />
       </section>
     </section>
   );

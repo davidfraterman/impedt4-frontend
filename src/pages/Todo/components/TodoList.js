@@ -6,20 +6,18 @@ const TodoList = (props) => {
 
   const { companies } = props;
 
-  console.log(companies);
-
   return (
     <table className={styles.todoListTable}>
       <thead>
         <tr>
           <th>Bedrijf</th>
-          <th>Adres</th>
+          <th>Risk Indicator</th>
         </tr>
       </thead>
       <tbody>
         {companies.map(company => {
           return (
-            <TodoListItem key={company.id} name={company.name} address={company.address} />
+            <TodoListItem key={company.id} category={company.category} riskindicator={company.riskindicator} />
           )
         })}
       </tbody>
