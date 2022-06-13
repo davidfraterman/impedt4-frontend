@@ -1,6 +1,8 @@
 import App from "../../App";
 import React from "react";
 
+import { Link } from 'react-router-dom';
+
 import profile from './images/pic.png';
 import email from './images/email.png';
 import password from './images/password.png';
@@ -29,7 +31,9 @@ function Login(){
                     <img src={password} alt="password" className="password"/>
                     <input type="password" placeholder="wachtwoord" className="name"/>
                 </div>
+                <Link to="/">
                 <button className="login-button">Log in</button>
+                </Link>
             </div>
 
         </div>
