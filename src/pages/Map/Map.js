@@ -7,7 +7,7 @@ import "./Map.css";
 
 // import mapData from './geoJSON/bedrijven_normal_json.json'
 
-import L from 'leaflet';
+// import L from 'leaflet';
 // import './MyMap.css';
 // const coords = () => {
 //   let data;
@@ -47,7 +47,7 @@ class Map extends React.Component {
         });
     }
 
-    getData() {
+  getData() {
       return this.state.bedrijven
     }
 
@@ -59,7 +59,7 @@ class Map extends React.Component {
       {this.getData().map((data, i) => {
       
       //markers die niet geconroleerd te hoeven worden
-      if(data.relevant == 1 && data.gepland == 0 && data.todo == 0 && data.plan == 0){
+      if(data.relevant === 1 && data.gepland === 0 && data.todo === 0 && data.plan === 0){
         return(
           <div>
             <CircleMarker key={"bedrijf"} 
@@ -80,7 +80,7 @@ class Map extends React.Component {
       }
 
       //markers die gecontroleerd moeten worden
-      if(data.relevant == 1 && data.gepland == 1 && data.todo == 0 && data.plan == 0){
+      if(data.relevant === 1 && data.gepland === 1 && data.todo === 0 && data.plan === 0){
         return(
           <div>
             <CircleMarker key={"bedrijf"} 
@@ -102,7 +102,7 @@ class Map extends React.Component {
       }
 
       //markers die toegevoegd zijn aan de to do list
-      if(data.relevant == 1 && data.gepland == 1 && data.todo == 1 && data.plan == 0){
+      if(data.relevant === 1 && data.gepland === 1 && data.todo === 1 && data.plan === 0){
         return(
           <div>
             <CircleMarker key={"bedrijf"} 
@@ -124,7 +124,7 @@ class Map extends React.Component {
       }
 
       //markers van bedrijven die gecontroleerd zijn
-      if(data.relevant == 1 && data.gepland == 1 && data.todo == 0 && data.plan == 1){
+      if(data.relevant === 1 && data.gepland === 1 && data.todo === 0 && data.plan === 1){
         return(
           <div>
             <CircleMarker key={"bedrijf"} 
