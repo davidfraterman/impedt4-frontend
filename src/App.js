@@ -9,7 +9,7 @@ import * as ROUTES from "./constants/routes";
 import Header from "./components/layout/Header";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Auth/Auth";
-// import Map from "./pages/Map/Map";
+import Map from "./pages/Map/Map";
 import Todo from "./pages/Todo/Todo";
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
         <Routes>
           <Route path={ROUTES.HOME} element={<Home />} />
           <Route path={ROUTES.LOGIN} element={<Login />} />
-          {/* <Route path={ROUTES.KAART} element={<Map />} /> */}
+          <Route path={ROUTES.KAART} element={<Map />} />
           <Route path={ROUTES.TODO} element={<Todo />} />
         </Routes>
       </BrowserRouter>
