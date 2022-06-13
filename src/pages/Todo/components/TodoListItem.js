@@ -4,8 +4,8 @@ import styles from '../Todo.module.css'
 const TodoListItem = (props) => {
   return (
     <tr>
-      <td>{props.name}</td>
-      <td>{props.address}</td>
+      <td>{props.category}</td>
+      <td>{props.riskindicator}</td>
     </tr>
   );
 }

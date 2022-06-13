@@ -17,7 +17,7 @@ const TodoList = (props) => {
       <tbody>
         {companies.map(company => {
           return (
-            <TodoListItem key={company.id} name={company.name} address={company.address} />
+            <TodoListItem key={company.id} category={company.category} riskindicator={company.riskindicator} />
           )
         })}
       </tbody>

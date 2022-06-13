@@ -8,14 +8,15 @@ import axios from 'axios';
 const Todo = () => {
 
   const [bedrijven, setBedrijven] = React.useState([]);
-
-  axios.get('http://127.0.0.1:8000/api/bedrijven')
-    .then(res => {
-      setBedrijven(res.data);
-      // console.log([bedrijven[0].latitude, bedrijven[0].longitude]);
-      // return(bedrijven);
-    })
-
+  // useffect
+  React.useEffect(() => {
+    axios.get('http://localhost:8000/api/bedrijven')
+      .then(res => {
+        setBedrijven(res.data);
+      }).catch(err => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <section className={styles.todoContainer}>
@@ -28,11 +29,11 @@ const Todo = () => {
           bedrijven.map(company => {
             return {
               id: company.id,
-              name: company.category,
-              address: company.riskindicator,
+              category: company.category,
+              riskindicator: company.riskindicator,
             }
           })
-        }/>
+        } />
       </section>
     </section>
   );
