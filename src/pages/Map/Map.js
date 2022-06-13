@@ -56,8 +56,8 @@ class Map extends React.Component {
       <div>
       {this.getData().map((data, i) => {
       return(
-        <div>
-          <CircleMarker key={"bedrijf"} 
+        <div key={i}>
+          <CircleMarker key={i} 
           radius={3} 
           color={"black"}
           weight={1}
@@ -79,7 +79,7 @@ class Map extends React.Component {
           <MapContainer
             center={this.mapCenter}
             zoom={13}
-            style={{width: '100%', height: '100%'}}
+            style={{width: '80%', height: '80%'}}
           >
           <TileLayer
             url="https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmllbHNkb2JiZWxhYXIiLCJhIjoiY2wxMjN4anhjMDJvYjNlcGR3ZDVwN2RhbiJ9.M3p510hqjAir3XSYRvPqsQ"
