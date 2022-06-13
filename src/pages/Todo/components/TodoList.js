@@ -6,14 +6,12 @@ const TodoList = (props) => {
 
   const { companies } = props;
 
-  console.log(companies);
-
   return (
     <table className={styles.todoListTable}>
       <thead>
         <tr>
           <th>Bedrijf</th>
-          <th>Adres</th>
+          <th>Risk Indicator</th>
         </tr>
       </thead>
       <tbody>
