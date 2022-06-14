@@ -26,7 +26,6 @@ class Map extends React.Component {
 
   addTodo(id, e) {
     e.preventDefault();
-    console.log(id);
     axios.post('http://127.0.0.1:8000/api/addTodo', {id: id})
     .then(function (response) {
       console.log(response.data);
@@ -34,7 +33,22 @@ class Map extends React.Component {
     .catch(function (error) {
     console.log(error);
     });
+    // window.location.href = "http://localhost:3000/todo";
   }
+
+  addToplan(id, e) {
+    e.preventDefault();
+    axios.post('http://127.0.0.1:8000/api/addToplan', {id: id})
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+    console.log(error);
+    }); 
+    // window.location.href = "http://localhost:3000/todo";
+    
+  }
+
 
   getData() {
       return this.state.bedrijven
@@ -108,7 +122,9 @@ class Map extends React.Component {
               <h1>Bedrijf</h1>
                 <p>Info: {data.category}</p>
                 <p>Risicofactor: {data.riskindicator}%</p>
-                <button>Bedrijf is gecontroleerd</button>
+                <form onSubmit={this.addToplan.bind(this, data.id)}>
+                 <button type="submit">Bedrijf gecontroleerd</button>
+                </form>
               </Popup>
             </CircleMarker>
           </div>
