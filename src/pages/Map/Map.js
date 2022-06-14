@@ -5,35 +5,12 @@ import {MapContainer, CircleMarker, TileLayer, Popup} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import "./Map.css";
 
-// import mapData from './geoJSON/bedrijven_normal_json.json'
-
-// import L from 'leaflet';
-// import './MyMap.css';
-// const coords = () => {
-//   let data;
-//   axios.get('http://127.0.0.1:8000/api/bedrijven')
-//     .then(res => {
-//       const bedrijven = res.data;
-//       this.setState({bedrijven});
-//     })
-    // console.log(data);
-  //   let lat = data[id].latitude;
-  //   let long = data[id].longitude;
-  //   lat = parseFloat(lat.replace(",","."));
-  //   long = parseFloat(long.replace(",","."));
-  //   // coords.push(lat, long);
-  //   coords = [lat, long];
-  // return(coords);
-// }
-
-// import L from 'leaflet';
-
-
 class Map extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        bedrijven: []
+        bedrijven: [],
+        todoChange: null,
       }
     }
     
@@ -46,6 +23,18 @@ class Map extends React.Component {
           console.log(error);
         });
     }
+
+  addTodo(id, e) {
+    e.preventDefault();
+    console.log(id);
+    axios.post('http://127.0.0.1:8000/api/addTodo', {id: id})
+    .then(function (response) {
+      console.log(response.data);
+    })
+    .catch(function (error) {
+    console.log(error);
+    });
+  }
 
   getData() {
       return this.state.bedrijven
@@ -94,7 +83,10 @@ class Map extends React.Component {
               <h1>Bedrijf</h1>
                 <p>Info: {data.category}</p>
                 <p>Risicofactor: {data.riskindicator}%</p>
-                <button>Toevoegen aan ToDo</button>
+                <form onSubmit={this.addTodo.bind(this, data.id)}>
+                 <button type="submit">Toevoegen aan ToDo</button> 
+                </form>
+                
               </Popup>
             </CircleMarker>
           </div>
