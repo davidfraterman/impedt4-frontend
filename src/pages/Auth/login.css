@@ -21,6 +21,7 @@
 .login-titel{
     font-family: 'Poppins', sans-serif;
     font-size: 2.25rem;
+    color: var(--clr-black);
 }
 
 .container-image{
