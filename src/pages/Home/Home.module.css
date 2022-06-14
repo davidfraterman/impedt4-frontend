@@ -1,0 +1,19 @@
+.container {
+  margin: 0 auto;
+  max-width: 900px;
+  width: 90%;
+  margin-top: 2rem;
+
+}
+
+h1 {
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--clr-black);
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  color: #666666;
+  margin-bottom: 0.5rem;
+}
