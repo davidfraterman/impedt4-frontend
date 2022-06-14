@@ -13,7 +13,7 @@ function Login(){
         <section className="main-login">
             <form className="sub-main-login">
                 <section>
-                    <section className="titleContainer">
+                    <section className="loginTitleContainer">
                         <Icon icon="bi:person-fill" color="var(--clr-black)" height="40" />
                         <h1 className="login-titel">Log in</h1>
                     </section>

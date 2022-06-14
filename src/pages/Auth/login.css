@@ -11,7 +11,7 @@
     max-width: 90%;
 }
 
-.titleContainer {
+.loginTitleContainer {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -22,6 +22,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 2.25rem;
     color: var(--clr-black);
+    margin: 0;
 }
 
 .container-image{
