@@ -5,7 +5,7 @@ const TodoListItem = (props) => {
   return (
     <tr>
       <td>{props.category}</td>
-      <td>{props.riskindicator}</td>
+      <td className={styles.tableNumber}>{props.riskindicator}</td>
     </tr>
   );
 }

@@ -20,6 +20,7 @@
   border-radius: 1rem;
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.03);
   border: 1px solid var(--clr-light-grey);
+  width: 100%;
 }
 
 .todoListTable {
@@ -37,11 +38,15 @@
 }
 
 td {
-  padding: 1rem 2rem;
+  padding: 0.75rem 1rem;
   background-color: transparent;
   color: var(--clr-black);
   font-weight: 400;
   font-size: 0.9rem;
+}
+
+.tableNumber {
+  text-align: right;
 }
 
 table {
@@ -55,7 +60,7 @@ thead {
 }
 
 th {
-  padding: 1.2rem 2rem;
+  padding: 1.2rem 1rem;
   text-align: left;
   font-weight: 500;
   color: var(--clr-black);

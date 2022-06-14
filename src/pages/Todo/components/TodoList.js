@@ -11,7 +11,7 @@ const TodoList = (props) => {
       <thead>
         <tr>
           <th>Bedrijf</th>
-          <th>Risk Indicator</th>
+          <th className={styles.tableNumber}>Risk Indicator</th>
         </tr>
       </thead>
       <tbody>
