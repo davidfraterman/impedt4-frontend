@@ -155,6 +155,8 @@ class Map extends React.Component {
 
     render() {
       return (
+
+        <section className="mapsection"> 
           <MapContainer
             center={this.mapCenter}
             zoom={13}
@@ -167,6 +169,8 @@ class Map extends React.Component {
           </TileLayer>
             {this.getMarker()}
           </MapContainer>
+        </section>
+
         );
     }
 }

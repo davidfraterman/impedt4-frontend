@@ -7,3 +7,8 @@ button:hover{
     cursor:pointer;
 
 }
+
+.mapsection{
+    width: 100vw;
+    height: 100vh;
+}
