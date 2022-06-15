@@ -8,6 +8,15 @@ button:hover{
 
 }
 
+.markerPopupButton {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    padding: 0.1rem;
+}
+
 .mapsection{
     width: 100vw;
     height: calc(100vh - 4.2rem);

@@ -46,7 +46,7 @@ const Home = () => {
                 <section className={styles.mijnOverzichtContainer}>
                     <h2>Mijn overzicht</h2>
                     <section className={styles.mijnOverzichtData}>
-                        <p>Aantal bedrijven</p>
+                        <p>Controleerbare bedrijven</p>
                         <p className={styles.mijnOverzichtDatapoint}>
                             {getAmountOfCompanies()}
                         </p>

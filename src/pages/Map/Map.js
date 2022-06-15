@@ -133,7 +133,7 @@ class Map extends React.Component {
                     <p>Info: {data.category}</p>
                     <p>Risicofactor: {data.riskindicator}%</p>
                     <form onSubmit={this.addTodo.bind(this, data.id)}>
-                      <button type="submit">Toevoegen aan ToDo</button>
+                      <button className="markerPopupButton" type="submit">+ Toevoegen aan To-do</button>
                     </form>
 
                   </Popup>
@@ -157,11 +157,11 @@ class Map extends React.Component {
                   fillOpacity={1}
                   center={[parseFloat(data.latitude.replace(",", ".")), parseFloat(data.longitude.replace(",", "."))]}>
                   <Popup>
-                    <h1>Bedrijf</h1>
+                    <h1>Bedrijf {data.id}</h1>
                     <p>Info: {data.category}</p>
                     <p>Risicofactor: {data.riskindicator}%</p>
                     <form onSubmit={this.addToplan.bind(this, data.id)}>
-                      <button type="submit">Bedrijf gecontroleerd</button>
+                      <button className="markerPopupButton" type="submit">Bedrijf Controleren</button>
                     </form>
                   </Popup>
                 </CircleMarker>

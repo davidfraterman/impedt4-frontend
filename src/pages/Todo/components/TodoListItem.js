@@ -9,13 +9,13 @@ const TodoListItem = (props) => {
 
   return (
     <tr>
-      <td>
-        <Link to={ROUTES.INSPECTIE.replace(':id', props.id)}>
-          <Icon className={styles.addInspectionIcon} icon="fluent:add-square-24-filled" color="black" height="30" />
-        </Link>
-      </td>
       <td>{props.category}</td>
       <td className={styles.tableNumber}>{props.riskindicator}</td>
+      <td>
+        <Link to={ROUTES.INSPECTIE.replace(':id', props.id)}>
+          <Icon className={styles.addInspectionIcon} icon="bi:clipboard-plus" color="black" height="30" />
+        </Link>
+      </td>
     </tr>
   );
 }
