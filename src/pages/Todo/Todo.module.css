@@ -37,8 +37,13 @@
   gap: 1rem;
 }
 
+.addIcon:hover {
+  cursor: pointer;
+
+}
+
 td {
-  padding: 0.75rem 1rem;
+  padding: 1.2rem 1rem;
   background-color: transparent;
   color: var(--clr-black);
   font-weight: 400;
@@ -78,4 +83,8 @@ tr {
 
 tr:nth-last-child(1) {
   border-bottom: none;
+}
+
+.noTodo {
+  padding: 1rem;
 }

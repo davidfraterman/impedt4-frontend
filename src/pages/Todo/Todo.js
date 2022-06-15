@@ -41,6 +41,12 @@ const Todo = () => {
             }
           })
         } />
+        {
+          bedrijven.length === 0 &&
+          <section className={styles.noTodo}>
+            Er zijn nog geen bedrijven in de todo lijst.
+          </section>
+        }
       </section>
     </section>
   );
