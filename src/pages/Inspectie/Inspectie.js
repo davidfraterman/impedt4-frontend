@@ -15,7 +15,9 @@ const Inspectie = (props) => {
   React.useEffect(() => {
     axios.get('http://localhost:8000/api/bedrijven')
       .then(res => {
+        setBedrijven([]);
         setBedrijven(res.data);
+        console.log(res.data);
       }).catch(err => {
         console.log(err);
       });
@@ -30,19 +32,19 @@ return (
 
       <section className={styles.inspectieList}>
         <h1 className={styles.inspectieInputTitel}>Bedrijfsnaam</h1>         
-        <input type="text" className={styles.inspectieInput}/>
+        <h1 className={styles.inspectieInput}> </h1>
         </section>
 
       <section className={styles.inspectieList}>
-        <h1 className={styles.inspectieInputTitel}>Locatie</h1>
-        <select className={styles.inspectieSelect}>
+        <label htmlFor="locatie" className={styles.inspectieInputTitel}>Locatie</label>
+        <select id="locatie" className={styles.inspectieSelect}>
           <option>Eindhoven</option>
         </select>
       </section>
 
       <section className={styles.inspectieList}>
-        <h1 className={styles.inspectieInputTitel}>Naam inspecteur</h1>
-        <input type="text" className={styles.inspectieInput}/>
+        <label htmlFor="name" className={styles.inspectieInputTitel}>Naam inspecteur</label>
+        <input id="name" type="text" className={styles.inspectieInput}/>
       </section>
 
       <Link to="/">
