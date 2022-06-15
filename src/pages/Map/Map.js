@@ -1,9 +1,10 @@
 import React from "react";
 import axios from 'axios';
 
-import {MapContainer, CircleMarker, TileLayer, Popup} from 'react-leaflet';
+import {MapContainer, CircleMarker, Marker, TileLayer, Popup} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import "./Map.css";
+import L from "leaflet";
 
 class Map extends React.Component {
     constructor(props){
@@ -13,6 +14,14 @@ class Map extends React.Component {
         todoChange: null,
       }
     }
+
+    GetIcon(_iconSize) {
+      return L.icon({
+        iconUrl: require("../../assets/poppetje.png"),
+        iconSize: [_iconSize]
+    })
+  }
+    
     
     componentDidMount() {
       axios.get('http://127.0.0.1:8000/api/bedrijven')
@@ -159,7 +168,7 @@ class Map extends React.Component {
       
     }
 
-    mapCenter = [51.44402355, 5.472920898];
+    mapCenter = [51.44362355, 5.472920898];
 
     render() {
       return (
@@ -167,9 +176,15 @@ class Map extends React.Component {
         <section className="mapsection"> 
           <MapContainer
             center={this.mapCenter}
-            zoom={13}
+            zoom={17}
             style={{width: '100%', height: '100%'}}
           >
+          <Marker 
+            position={this.mapCenter}
+            icon={this.GetIcon(60)}
+          >
+             
+          </Marker>
           <TileLayer
             url="https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmllbHNkb2JiZWxhYXIiLCJhIjoiY2wxMjN4anhjMDJvYjNlcGR3ZDVwN2RhbiJ9.M3p510hqjAir3XSYRvPqsQ"
             maxZoom={20}
