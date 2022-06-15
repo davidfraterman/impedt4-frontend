@@ -53,6 +53,7 @@ class Map extends React.Component {
     axios.get('http://127.0.0.1:8000/api/bedrijven')
       .then(res => {
         this.setState({ bedrijven: res.data })
+        console.log(res)
       })
       .catch(function (error) {
         console.log(error);
@@ -64,11 +65,11 @@ class Map extends React.Component {
     axios.post('http://127.0.0.1:8000/api/addTodo', { id: id })
       .then(function (response) {
         console.log(response.data);
+        window.location.href = "http://localhost:3000/todo";
       })
       .catch(function (error) {
         console.log(error);
       });
-    // window.location.href = "http://localhost:3000/todo";
   }
 
   addToplan(id, e) {
@@ -76,12 +77,11 @@ class Map extends React.Component {
     axios.post('http://127.0.0.1:8000/api/addToplan', { id: id })
       .then(function (response) {
         console.log(response.data);
+        window.location.href = "http://localhost:3000/kaart";
       })
       .catch(function (error) {
         console.log(error);
       });
-    // window.location.href = "http://localhost:3000/todo";
-
   }
 
 
@@ -97,7 +97,7 @@ class Map extends React.Component {
         {this.getData().map((data, i) => {
 
           //markers die niet geconroleerd te hoeven worden
-          if (data.relevant === 1 && data.gepland === 0 && data.todo === 0 && data.plan === 0) {
+          if (data.relevant === 1 && data.gepland == 0 && data.todo === 0 && data.plan === 0) {
             return (
               <div>
                 <CircleMarker key={"bedrijf"}
@@ -141,6 +141,9 @@ class Map extends React.Component {
               </div>
             )
           }
+          else {
+            console.log("je moeder is een plopkoek!")
+          }
 
           //markers die toegevoegd zijn aan de to do list
           if (data.relevant === 1 && data.gepland === 1 && data.todo === 1 && data.plan === 0) {
@@ -165,6 +168,9 @@ class Map extends React.Component {
               </div>
             )
           }
+          else {
+            console.log("je moeder is een plopkoek!")
+          }
 
           //markers van bedrijven die gecontroleerd zijn
           if (data.relevant === 1 && data.gepland === 1 && data.todo === 0 && data.plan === 1) {
@@ -186,6 +192,8 @@ class Map extends React.Component {
                 </CircleMarker>
               </div>
             )
+          } else {
+            console.log("je moeder is een plopkoek!")
           }
 
         })}
