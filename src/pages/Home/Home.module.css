@@ -10,10 +10,67 @@ h1 {
   font-size: 2rem;
   font-family: 'Poppins', sans-serif;
   color: var(--clr-black);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 p {
   font-family: 'Poppins', sans-serif;
   color: #666666;
-  margin-bottom: 0.5rem;
+}
+
+.mijnOverzichtContainer {
+  padding: 1.25rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 14px -4px #00000037;
+}
+
+.mijnOverzichtContainer > h2 {
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+}
+
+.mijnOverzichtData {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.mijnOverzichtDatapoint {
+  font-size: 1.2rem;
+  color: var(--clr-main);
+  font-weight: 600;
+}
+
+.toMapBtn {
+  margin-top: 1rem;
+  width:100%;
+  border-radius: 0.5rem;
+  background-color: rgba(152, 26, 26, 0.067);
+  color: var(--clr-main);
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid var(--clr-main);
+  height: auto;
+}
+
+.toMapBtn:hover {
+  box-shadow: 0px 0px 14px -5px #00000021;
+}
+
+/* utility */
+
+.uTextDecNone {
+  text-decoration: none;
 }
