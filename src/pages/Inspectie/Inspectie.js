@@ -1,29 +1,28 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import styles from './Inspectie.module.css';
-
+import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 
 const Inspectie = (props) => {
 
-  const { companies } = props;
-
   const [bedrijven, setBedrijven] = React.useState([]);
+  const { id } = useParams();
+
   // useffect
   React.useEffect(() => {
     axios.get('http://localhost:8000/api/bedrijven')
       .then(res => {
         setBedrijven([]);
         setBedrijven(res.data);
-        console.log(res.data);
       }).catch(err => {
         console.log(err);
       });
   }, []);
 
-return (
+  return (
     <section className={styles.inspectieContainer}>
       <section className={styles.inspectieTitleWrapper}>
         <Icon icon="ant-design:plus-circle-filled" color="black" height="30" />
@@ -31,9 +30,9 @@ return (
       </section>
 
       <section className={styles.inspectieList}>
-        <h1 className={styles.inspectieInputTitel}>Bedrijfsnaam</h1>         
-        <h1 className={styles.inspectieInput}> </h1>
-        </section>
+        <h1 className={styles.inspectieInputTitel}>Bedrijfsnaam</h1>
+        <h1 className={styles.inspectieInput}> Bedrijf {id} </h1>
+      </section>
 
       <section className={styles.inspectieList}>
         <label htmlFor="locatie" className={styles.inspectieInputTitel}>Locatie</label>
@@ -44,12 +43,12 @@ return (
 
       <section className={styles.inspectieList}>
         <label htmlFor="name" className={styles.inspectieInputTitel}>Naam inspecteur</label>
-        <input id="name" type="text" className={styles.inspectieInput}/>
+        <input id="name" type="text" className={styles.inspectieInput} />
       </section>
 
-      <Link to="/">
-          <button className={styles.inspectieSubmitButton}>Submit</button>
-        </Link>
+      <Link to="/kaart">
+        <button className={styles.inspectieSubmitButton}>Submit</button>
+      </Link>
 
     </section>
   );
