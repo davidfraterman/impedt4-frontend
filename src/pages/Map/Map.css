@@ -11,4 +11,36 @@ button:hover{
 .mapsection{
     width: 100vw;
     height: calc(100vh - 4.2rem);
+    position: relative;
+}
+
+.map__todoListBtnWrapper {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 999 !important;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    box-shadow: 0px 0px 15px -8px #000000;
+    background-color: var(--clr-white);
+}
+.map__todoListBtnWrapper:hover {
+    cursor: pointer;
+}
+
+.map__backBtnWrapper {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    z-index: 999 !important;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    box-shadow: 0px 0px 15px -8px #000000;
+    background-color: var(--clr-white);
+}
+
+.map__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
