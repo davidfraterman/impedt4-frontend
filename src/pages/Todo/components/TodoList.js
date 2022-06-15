@@ -10,6 +10,7 @@ const TodoList = (props) => {
     <table className={styles.todoListTable}>
       <thead>
         <tr>
+          <th></th>
           <th>Bedrijf</th>
           <th className={styles.tableNumber}>Risk Indicator</th>
         </tr>
