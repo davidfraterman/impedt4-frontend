@@ -6,7 +6,7 @@
 
 }
 
-h1 {
+.title {
   font-size: 2rem;
   font-family: 'Poppins', sans-serif;
   color: var(--clr-black);

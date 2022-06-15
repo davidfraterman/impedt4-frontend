@@ -17,16 +17,26 @@ const Todo = () => {
       .then(res => {
     
         // filter where todo = 1
-        // const bedrijven = res.data.filter(company => {
-        //   return company.todo === 1
-        // });
+        const bedrijven = res.data.filter(company => {
+          return company.todo === 1
+        });
 
-        setBedrijven(res.data);
+        setBedrijven(bedrijven);
 
       }).catch(err => {
         console.log(err);
       });
   }, []);
+
+  const amountOfTodo = () => {
+    let amount = 0;
+    bedrijven.map(company => {
+      if (company.todo === 1) {
+        amount++;
+      }
+    });
+    return amount;
+  }
 
   return (
     <section className={styles.todoContainer}>
@@ -39,7 +49,7 @@ const Todo = () => {
 
       <section className={styles.todoTitleWrapper}>
         <Icon icon="fa6-solid:car-side" color="black" height="30" />
-        <h1 className={styles.todoTitle}>To do</h1>
+        <h1 className={styles.todoTitle}>To do ({amountOfTodo()})</h1>
       </section>
       <section className={styles.todoList}>
         <TodoList companies={

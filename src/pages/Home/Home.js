@@ -38,7 +38,7 @@ const Home = () => {
     return (
         <>
             <article className={styles.container}>
-                <h1>
+                <h1 className={styles.title}>
                     <Icon icon="ant-design:home-filled" color="var(--clr-black)" height="30" />
                     Home
                 </h1>

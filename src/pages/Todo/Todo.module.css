@@ -51,8 +51,11 @@ td {
 }
 
 td:nth-child(1){
-  padding: 0;
-  padding-left: 1rem;
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tableNumber {
@@ -105,4 +108,11 @@ tr:nth-last-child(1) {
 
 .todoMapBtn:hover {
 
+}
+.addInspectionIcon {
+  transition: 0.2s all;
+}
+
+.addInspectionIcon:hover {
+  transform: scale(1.1);
 }
