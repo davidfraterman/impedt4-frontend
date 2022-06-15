@@ -74,8 +74,7 @@ function Login(){
 
  
 
-
-    return (
+const renderForm = (
         <section className="main-login">
             <form className="sub-main-login" onSubmit={handleSubmit}>
                 <section>
@@ -97,13 +96,26 @@ function Login(){
                     <input name="pass" id="password" type="password" autoComplete="on" className="name"/>
                     {renderErrorMessage("pass")}
                 </section>
-                <Link to={ROUTES.HOME}>
-                <input type="submit" className="login-button" Log in />
-                </Link>
+                    <input type="submit" className="login-button" Log in />
             </form>
 
         </section>
+)
+
+    return (
+      <div className="app">
+        <section className="main-login">
+          {isSubmitted ? <div>
+            <Link to={ROUTES.HOME}>
+            <button className="home-button"> 
+            
+            home</button>
+            </Link>
+          </div> : renderForm}
+        </section>
+      </div>
     );
+    
 }
 
 export default Login;
