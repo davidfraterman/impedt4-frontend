@@ -22,6 +22,18 @@ const Inspectie = (props) => {
       });
   }, []);
 
+  const addToplan = (id, e) => {
+    e.preventDefault();
+    axios.post('http://127.0.0.1:8000/api/addToplan', { id: id })
+      .then(function (response) {
+        console.log(response.data);
+        window.location.href = "http://localhost:3000/kaart";
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   return (
     <section className={styles.inspectieContainer}>
       <section className={styles.inspectieTitleWrapper}>
@@ -46,9 +58,9 @@ const Inspectie = (props) => {
         <input id="name" type="text" className={styles.inspectieInput} />
       </section>
 
-      <Link to="/kaart">
-        <button className={styles.inspectieSubmitButton}>Submit</button>
-      </Link>
+      <form onSubmit={addToplan.bind(this, id)}>
+                      <button type="submit">Submit</button>
+      </form>
 
     </section>
   );

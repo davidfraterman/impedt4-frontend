@@ -160,16 +160,13 @@ class Map extends React.Component {
                     <h1>Bedrijf</h1>
                     <p>Info: {data.category}</p>
                     <p>Risicofactor: {data.riskindicator}%</p>
-                    <form onSubmit={this.addToplan.bind(this, data.id)}>
-                      <button type="submit">Bedrijf gecontroleerd</button>
-                    </form>
+                    <Link to={ROUTES.INSPECTIE.replace(':id', data.id)}>
+                      <button>Submit</button>
+                    </Link>
                   </Popup>
                 </CircleMarker>
               </div>
             )
-          }
-          else {
-            console.log("je moeder is een plopkoek!")
           }
 
           //markers van bedrijven die gecontroleerd zijn

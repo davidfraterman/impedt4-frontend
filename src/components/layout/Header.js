@@ -37,6 +37,10 @@ const Header = () => {
                             <Icon icon="majesticons:map-marker-area" color="var(--clr-white)" height="30" />
                             Kaart
                         </Link>
+                        <Link className={styles.link} to={ROUTES.TODO} onClick={toggleHamburgerMenu}>
+                            <Icon icon="fa6-solid:car-side" color="var(--clr-white)" height="30" />
+                            To do
+                        </Link>
                         <Link className={styles.link} to={ROUTES.LOGIN} onClick={toggleHamburgerMenu}>
                             <Icon icon="bx:log-out" color="var(--clr-white)" height="30" />
                             Uitloggen
