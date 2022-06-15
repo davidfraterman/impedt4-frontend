@@ -6,6 +6,9 @@ import password from './images/password.png';
 
 import { Icon } from '@iconify/react';
 
+import * as ROUTES from './components/routes'
+
+
 import './login.css';
 
 function Login(){
@@ -58,7 +61,7 @@ function Login(){
 
 
     if(isPasswordValid && isUsernameValid == true){
-        ROUTE.HOME
+
     }
   };
 
@@ -93,7 +96,7 @@ function Login(){
                     <input name="pass" id="password" type="password" autoComplete="on" className="name"/>
                     {renderErrorMessage("pass")}
                 </section>
-                <input type="submit" className="login-button"Log in />
+                <input type="submit" className="login-button" to={ROUTE.HOME} Log in />
             </form>
 
         </section>
