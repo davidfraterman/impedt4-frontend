@@ -17,7 +17,14 @@ class Map extends React.Component {
     componentDidMount() {
       axios.get('http://127.0.0.1:8000/api/bedrijven')
         .then(res => {
-          this.setState({bedrijven: res.data})
+          // filter where todo = 1
+          const bedrijven = res.data.filter(company => {
+            return company.todo === 1
+          });
+
+          console.log(bedrijven);
+
+          this.setState({ bedrijven: bedrijven })
         })
         .catch (function (error) {
           console.log(error);

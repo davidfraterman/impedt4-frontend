@@ -12,7 +12,14 @@ const Todo = () => {
   React.useEffect(() => {
     axios.get('http://localhost:8000/api/bedrijven')
       .then(res => {
-        setBedrijven(res.data);
+    
+        // filter where todo = 1
+        const bedrijven = res.data.filter(company => {
+          return company.todo === 1
+        });
+
+        setBedrijven(bedrijven);
+
       }).catch(err => {
         console.log(err);
       });
