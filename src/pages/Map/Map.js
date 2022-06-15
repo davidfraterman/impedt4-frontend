@@ -26,7 +26,6 @@ import L from 'leaflet';
 // }
 
 // import L from 'leaflet';
-import './Map.module.css';
 
 
 class Map extends React.Component {

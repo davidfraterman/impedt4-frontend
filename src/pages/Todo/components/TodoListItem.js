@@ -5,10 +5,11 @@ import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
 
 const TodoListItem = (props) => {
+
   return (
     <tr>
       <td>
-        <Link to={ROUTES.INSPECTIE}>
+        <Link to={ROUTES.INSPECTIE.replace(':id', props.id)}>
           <Icon icon="fluent:add-square-24-filled" color="black" height="30" />
         </Link>
       </td>
