@@ -32,6 +32,7 @@ const Header = () => {
                     <Link className={styles.link} to={ROUTES.HOME} onClick={toggleHamburgerMenu}>Home</Link>
                     <Link className={styles.link} to={ROUTES.KAART} onClick={toggleHamburgerMenu}>Kaart</Link>
                     <Link className={styles.link} to={ROUTES.TODO} onClick={toggleHamburgerMenu}>To-do</Link>
+                    <Link className={styles.link} to={ROUTES.INSPECTIE} onClick={toggleHamburgerMenu}>Inspecties</Link>
                     <Link className={styles.link} to={ROUTES.LOGIN} onClick={toggleHamburgerMenu}>Uitloggen</Link>
                 </section>
                 )

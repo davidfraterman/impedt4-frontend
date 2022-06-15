@@ -1,8 +1,9 @@
 import App from "../../App";
 import React from "react";
 
-import email from './images/email.png';
-import password from './images/password.png';
+import './login.css'
+
+import { Link } from 'react-router-dom';
 
 import { Icon } from '@iconify/react';
 

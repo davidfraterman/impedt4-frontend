@@ -13,6 +13,7 @@ import Home from "./pages/Home/Home";
 import Login from "./pages/Auth/Auth";
 import Map from "./pages/Map/Map";
 import Todo from "./pages/Todo/Todo";
+import Inspectie from "./pages/Inspectie/Inspectie";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path={ROUTES.LOGIN} element={<Login />} />
           <Route path={ROUTES.KAART} element={<Map />} />
           <Route path={ROUTES.TODO} element={<Todo />} />
+          <Route path={ROUTES.INSPECTIE} element={<Inspectie />} />
         </Routes>
       </BrowserRouter>
     </>
