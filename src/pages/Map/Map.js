@@ -133,7 +133,7 @@ class Map extends React.Component {
                     <p>Info: {data.category}</p>
                     <p>Risicofactor: {data.riskindicator}%</p>
                     <form onSubmit={this.addTodo.bind(this, data.id)}>
-                      <button className="markerPopupButton" type="submit">+ Toevoegen aan To-do</button>
+                      <button type="submit">Toevoegen aan ToDo</button>
                     </form>
 
                   </Popup>
@@ -157,11 +157,11 @@ class Map extends React.Component {
                   fillOpacity={1}
                   center={[parseFloat(data.latitude.replace(",", ".")), parseFloat(data.longitude.replace(",", "."))]}>
                   <Popup>
-                    <h1>Bedrijf {data.id}</h1>
+                    <h1>Bedrijf</h1>
                     <p>Info: {data.category}</p>
                     <p>Risicofactor: {data.riskindicator}%</p>
                     <form onSubmit={this.addToplan.bind(this, data.id)}>
-                      <button className="markerPopupButton" type="submit">Bedrijf Controleren</button>
+                      <button type="submit">Bedrijf gecontroleerd</button>
                     </form>
                   </Popup>
                 </CircleMarker>
@@ -215,6 +215,25 @@ class Map extends React.Component {
           </section>
         </Link>
 
+        <section  className="map_legend">
+            <div className="row">
+              <p>gecontroleerd</p>
+              <div className="dot green"></div>
+            </div>
+            <div className="row">
+              <p>to do</p>
+              <div className="dot blue"></div>
+            </div>
+            <div className="row">
+              <p>irrelevant</p>
+              <div className="dot grey"></div>
+            </div>
+            <div className="row">
+              <p>gepland</p>
+              <div className="dot orange"></div>            
+              </div>
+        </section>
+
         <Link to={ROUTES.HOME}>
           <section className="map__backBtnWrapper">
             <Icon className="map__btn" icon="ant-design:home-outlined" color="var(--clr-main)" height="40" />
@@ -230,6 +249,8 @@ class Map extends React.Component {
             position={this.mapCenter}
             icon={this.GetIcon(60)}
           >
+
+            
 
           </Marker>
           <TileLayer
