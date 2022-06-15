@@ -29,10 +29,18 @@ const Header = () => {
                 isHamburgerMenuOpen && (
                 <section className={styles.hamburgerMenu__links}>
                     <Icon className={styles.closeIcon} onClick={toggleHamburgerMenu} icon="codicon:chrome-close" height="40" />
-                    <Link className={styles.link} to={ROUTES.HOME} onClick={toggleHamburgerMenu}>Home</Link>
-                    <Link className={styles.link} to={ROUTES.KAART} onClick={toggleHamburgerMenu}>Kaart</Link>
-                    <Link className={styles.link} to={ROUTES.TODO} onClick={toggleHamburgerMenu}>To-do</Link>
-                    <Link className={styles.link} to={ROUTES.LOGIN} onClick={toggleHamburgerMenu}>Uitloggen</Link>
+                        <Link className={styles.link} to={ROUTES.HOME} onClick={toggleHamburgerMenu}>
+                            <Icon icon="ant-design:home-filled" color="var(--clr-white)" height="30" />
+                            Home
+                        </Link>
+                        <Link className={styles.link} to={ROUTES.KAART} onClick={toggleHamburgerMenu}>
+                            <Icon icon="majesticons:map-marker-area" color="var(--clr-white)" height="30" />
+                            Kaart
+                        </Link>
+                        <Link className={styles.link} to={ROUTES.LOGIN} onClick={toggleHamburgerMenu}>
+                            <Icon icon="bx:log-out" color="var(--clr-white)" height="30" />
+                            Uitloggen
+                        </Link>
                 </section>
                 )
             }

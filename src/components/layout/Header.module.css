@@ -37,6 +37,7 @@
     animation: hamburgerLinks 0.3s ease;
 }
 
+
 @keyframes hamburgerLinks {
     0% {
         opacity: 0;
@@ -58,11 +59,21 @@
 .hamburgerMenu__links .link {
     color: white;
     text-decoration: none;
-    padding: 0.5rem;
+    padding: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: 0.2s all;
+    border-radius: 1rem;
 }
+
+.link:nth-last-child(1) {
+    margin-top: 3rem;
+}
+
 .hamburgerMenu__links .link:hover {
+    background-color: rgba(0, 0, 0, 0.075);
     cursor: pointer;
-    text-decoration: underline;
 }
 
 .closeIcon {
@@ -71,8 +82,11 @@
     right: 1.5rem;
     color: white;
     transition: 0.4s all;
+    border-radius: 1rem;
+    padding: 0.75rem;
 }
 .closeIcon:hover {
     cursor: pointer;
-    transform: rotate(90deg);
+    background-color: rgba(0, 0, 0, 0.075);
+    cursor: pointer;
 }
