@@ -34,6 +34,15 @@ const Home = () => {
         return bedrijven.length;
     }
 
+    const getAmountOfRelevantCompanies = () => {
+        let amount = 0;
+        bedrijven.map(company => {
+            if (company.relevant === 1 && company.gepland === 1) {
+                amount++;
+            }
+        });
+        return amount;
+    }
 
     return (
         <>
@@ -49,6 +58,12 @@ const Home = () => {
                         <p>Controleerbare bedrijven</p>
                         <p className={styles.mijnOverzichtDatapoint}>
                             {getAmountOfCompanies()}
+                        </p>
+                    </section>
+                    <section className={styles.mijnOverzichtData}>
+                        <p>Aantal Relevant</p>
+                        <p className={styles.mijnOverzichtDatapoint}>
+                            {getAmountOfRelevantCompanies()}
                         </p>
                     </section>
                     <section className={styles.mijnOverzichtData}>
