@@ -53,8 +53,13 @@ const Todo = () => {
       </Link>
 
       <section className={styles.todoTitleWrapper}>
-        <Icon icon="fa6-solid:car-side" color="black" height="30" />
-        <h1 className={styles.todoTitle}>To do ({amountOfTodo()})</h1>
+        <section className={styles.todoTitleLeft}>
+          <Icon icon="fa6-solid:car-side" color="black" height="30" />
+          <h1 className={styles.todoTitle}>To do</h1>
+        </section>
+        <section className={styles.todoTitleRight}>
+          ({amountOfTodo()})
+        </section>
       </section>
       <section className={styles.todoList}>
         <TodoList companies={
