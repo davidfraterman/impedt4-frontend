@@ -133,7 +133,7 @@ class Map extends React.Component {
                     <p>Info: {data.category}</p>
                     <p>Risicofactor: {data.riskindicator}%</p>
                     <form onSubmit={this.addTodo.bind(this, data.id)}>
-                      <button type="submit">Toevoegen aan ToDo</button>
+                      <button type="submit" className='markerPopupButton'>Toevoegen aan ToDo</button>
                     </form>
 
                   </Popup>
@@ -161,7 +161,7 @@ class Map extends React.Component {
                     <p>Info: {data.category}</p>
                     <p>Risicofactor: {data.riskindicator}%</p>
                     <Link to={ROUTES.INSPECTIE.replace(':id', data.id)}>
-                      <button>Submit</button>
+                      <button className='markerPopupButton'>Controleren</button>
                     </Link>
                   </Popup>
                 </CircleMarker>
