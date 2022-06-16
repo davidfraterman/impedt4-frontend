@@ -3,6 +3,7 @@ import TodoList from './components/TodoList'
 import { Icon } from '@iconify/react';
 import styles from './Todo.module.css';
 import { Link } from 'react-router-dom';
+import Spinner from '../../components/layout/Spinner';
 
 import * as ROUTES from "../../constants/routes";
 
@@ -11,8 +12,10 @@ import axios from 'axios';
 const Todo = () => {
 
   const [bedrijven, setBedrijven] = React.useState([]);
+  const [isLoading, setIsLoading] = React.useState(false);
   // useffect
   React.useEffect(() => {
+    setIsLoading(true);
     axios.get('http://localhost:8000/api/bedrijven')
       .then(res => {
     
@@ -22,9 +25,11 @@ const Todo = () => {
         });
 
         setBedrijven(bedrijven);
+        setIsLoading(false);
 
       }).catch(err => {
         console.log(err);
+        setIsLoading(false);
       });
   }, []);
 
@@ -62,9 +67,15 @@ const Todo = () => {
           })
         } />
         {
-          bedrijven.length === 0 &&
+          (bedrijven.length === 0 && isLoading === false) &&
           <section className={styles.noTodo}>
             Er zijn nog geen bedrijven in de todo lijst.
+          </section>
+        }
+        {
+          (bedrijven.length === 0 && isLoading === true) &&
+          <section className={styles.spinnerWrapper}>
+            <Spinner />
           </section>
         }
       </section>
