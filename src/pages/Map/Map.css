@@ -34,6 +34,32 @@ button:hover{
     background-color: var(--clr-white);
     display: flex;
     flex-direction: column;
+    animation: legend_legendAppear 0.3s ease-in-out;
+    animation-fill-mode: backwards;
+ }
+
+ .map_legend_closeIconWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+ }
+
+ .map_legend_closeIconWrapper h2 {
+    color: var(--clr-black);
+    font-size: 1.2rem;
+ }
+
+ .map_legend_closeIcon {
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    transition: 0.2s all;
+ }
+
+ .map_legend_closeIcon:hover {
+    cursor: pointer;
+    transform: scale(1.075);
  }
 
 .map__todoListBtnWrapper {
@@ -56,6 +82,20 @@ button:hover{
     justify-content: end;
     gap: 1rem;
     margin: 0.2rem;
+    animation: legend_legendItemAppear 0.2s ease-in-out; 
+    animation-fill-mode: backwards;
+}
+.row:nth-of-type(1) {
+    animation-delay: 0.15s;
+}
+.row:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+.row:nth-of-type(3) {
+    animation-delay: 0.25s;
+}
+.row:nth-of-type(4) {
+    animation-delay: 0.3s;
 }
 
 .map__backBtnWrapper {
@@ -67,6 +107,21 @@ button:hover{
     padding: 0.75rem;
     box-shadow: 0px 0px 15px -8px #000000;
     background-color: var(--clr-white);
+}
+
+.map__legendBtnWrapper {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 999 !important;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    box-shadow: 0px 0px 15px -8px #000000;
+    background-color: var(--clr-white);
+    animation: legend_btnAppear 0.3s ease-in-out;
+}
+.map__legendBtnWrapper:hover {
+    cursor: pointer;
 }
 
 .map__btn {
@@ -98,3 +153,34 @@ button:hover{
     background-color: orange;
 }
 
+
+@keyframes legend_legendAppear {   
+    0% {
+        transform: translateY(-10%);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes legend_btnAppear {   
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes legend_legendItemAppear {
+    0% {
+        opacity: 0;
+        transform: translateX(10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
