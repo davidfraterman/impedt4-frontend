@@ -38,6 +38,7 @@ class Map extends React.Component {
     this.state = {
       bedrijven: [],
       todoChange: null,
+      showLegend: false,
     }
   }
 
@@ -201,6 +202,12 @@ class Map extends React.Component {
 
   mapCenter = [51.44362355, 5.472920898];
 
+  toggleLegend = () => {
+    this.setState({
+      showLegend: !this.state.showLegend
+    });
+  }
+
   render() {
     return (
 
@@ -212,7 +219,18 @@ class Map extends React.Component {
           </section>
         </Link>
 
-        <section  className="map_legend">
+        {!this.state.showLegend &&
+        <section className="map__legendBtnWrapper" onClick={this.toggleLegend}>
+          <Icon className="map__btn" icon="clarity:help-info-line" color="var(--clr-main)" height="40" />
+        </section>
+        }
+
+        {this.state.showLegend &&
+        <section className="map_legend">
+          <section className="map_legend_closeIconWrapper">
+            <h2>Legenda</h2>
+            <Icon onClick={this.toggleLegend} className="map_legend_closeIcon" icon="ep:close-bold" color="var(--clr-black)" height="30" />
+          </section>
             <div className="row">
               <p>Gecontroleerd</p>
               <div className="dot green"></div>
@@ -230,6 +248,7 @@ class Map extends React.Component {
               <div className="dot orange"></div>            
               </div>
         </section>
+        }
 
         <Link to={ROUTES.HOME}>
           <section className="map__backBtnWrapper">
