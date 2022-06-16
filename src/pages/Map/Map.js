@@ -214,19 +214,19 @@ class Map extends React.Component {
 
         <section  className="map_legend">
             <div className="row">
-              <p>gecontroleerd</p>
+              <p>Gecontroleerd</p>
               <div className="dot green"></div>
             </div>
             <div className="row">
-              <p>to do</p>
+              <p>Relevant</p>
               <div className="dot blue"></div>
             </div>
             <div className="row">
-              <p>irrelevant</p>
+              <p>Irrelevant</p>
               <div className="dot grey"></div>
             </div>
             <div className="row">
-              <p>gepland</p>
+              <p>Gepland</p>
               <div className="dot orange"></div>            
               </div>
         </section>
