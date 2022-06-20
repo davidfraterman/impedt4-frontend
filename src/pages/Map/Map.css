@@ -23,7 +23,7 @@ button:hover{
     position: relative;
 }
 
-.map_legend {
+.map__legend {
     top: 1.5rem;
     right: 1.5rem;
     position: absolute;
@@ -34,30 +34,30 @@ button:hover{
     background-color: var(--clr-white);
     display: flex;
     flex-direction: column;
-    animation: legend_legendAppear 0.3s ease-in-out;
+    animation: legend__legendAppear 0.3s ease-in-out;
     animation-fill-mode: backwards;
  }
 
- .map_legend_closeIconWrapper {
+ .map__legend__closeIconWrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
  }
 
- .map_legend_closeIconWrapper h2 {
+ .map__legend__closeIconWrapper h2 {
     color: var(--clr-black);
     font-size: 1.2rem;
  }
 
- .map_legend_closeIcon {
+ .map__legend__closeIcon {
     top: 0.5rem;
     right: 0.5rem;
     cursor: pointer;
     transition: 0.2s all;
  }
 
- .map_legend_closeIcon:hover {
+ .map__legend__closeIcon:hover {
     cursor: pointer;
     transform: scale(1.075);
  }
@@ -155,7 +155,7 @@ button:hover{
 }
 
 
-@keyframes legend_legendAppear {   
+@keyframes legend__legendAppear {   
     0% {
         transform: translateY(-10%);
         opacity: 0;
@@ -166,7 +166,7 @@ button:hover{
     }
 }
 
-@keyframes legend_btnAppear {   
+@keyframes legend__btnAppear {   
     0% {
         opacity: 0;
     }
@@ -175,7 +175,7 @@ button:hover{
     }
 }
 
-@keyframes legend_legendItemAppear {
+@keyframes legend__legendItemAppear {
     0% {
         opacity: 0;
         transform: translateX(10%);
