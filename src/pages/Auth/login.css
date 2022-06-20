@@ -111,3 +111,22 @@ label {
     cursor: pointer;
     box-shadow: 0px 0px 20px -10px #c61a00f5;
 }
+
+.loginSpinnerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.loginErrorMessages {
+    margin-top: 1rem;
+}
+
+.loginErrorMsg {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    color: var(--clr-main);
+}
