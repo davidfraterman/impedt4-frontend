@@ -36,33 +36,31 @@ const Inspectie = (props) => {
 
   return (
     <section className={styles.inspectieContainer}>
-      <form className={styles.inspectieContainerForm}>
+      <form className={styles.inspectieContainerForm} onSubmit={addToplan.bind(this, id)}>
 
-      <section className={styles.inspectieTitleWrapper}>
-        <Icon icon="ant-design:plus-circle-filled" color="black" height="30" />
-        <h1 className={styles.inspectieTitle}>Nieuwe Record</h1>
-      </section>
+        <section className={styles.inspectieTitleWrapper}>
+          <Icon icon="ant-design:plus-circle-filled" color="black" height="30" />
+          <h1 className={styles.inspectieTitle}>Nieuwe Record</h1>
+        </section>
 
-      <section className={styles.inspectieList}>
-        <label className={styles.inspectieInputTitel}>Bedrijfsnaam</label>
-        <h1 className={styles.inspectieInputId}> Bedrijf {id} </h1>
-      </section>
+        <section className={styles.inspectieList}>
+          <label className={styles.inspectieInputTitel}>Bedrijfsnaam</label>
+          <h1 className={styles.inspectieInputId}> Bedrijf {id} </h1>
+        </section>
 
-      <section className={styles.inspectieList}>
-        <label htmlFor="locatie" className={styles.inspectieInputTitel}>Locatie</label>
-        <select id="locatie" className={styles.inspectieSelect}>
-          <option>Eindhoven</option>
-        </select>
-      </section>
+        <section className={styles.inspectieList}>
+          <label htmlFor="locatie" className={styles.inspectieInputTitel}>Locatie</label>
+          <select id="locatie" className={styles.inspectieSelect}>
+            <option>Eindhoven</option>
+          </select>
+        </section>
 
-      <section className={styles.inspectieList}>
-        <label htmlFor="name" className={styles.inspectieInputTitel}>Naam inspecteur</label>
-        <input id="name" type="text" className={styles.inspectieInput} />
-      </section>
+        <section className={styles.inspectieList}>
+          <label htmlFor="name" className={styles.inspectieInputTitel}>Naam inspecteur</label>
+          <input id="name" type="text" className={styles.inspectieInput} />
+        </section>
 
-      <form onSubmit={addToplan.bind(this, id)}>
-                      <button type="submit">Submit</button>
-      </form>
+        <button type="submit">Submit</button>
 
       </form>
 
