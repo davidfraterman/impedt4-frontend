@@ -1,19 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;600&family=Poppins:wght@600&display=swap');
+
 .inspectieContainer {
-    margin: 0 auto;
-    width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  }
+
+  .inspectieContainerForm{
+    max-width: 90%;
   }
   
   .inspectieTitleWrapper {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
   }
   
   .inspectieTitle {
-    font-size: 2rem;
-    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.25rem;
+    color: var(--clr-black);
+    margin: 0;
   }
   
   .inspectieList {
@@ -21,7 +30,6 @@
   }
   
   .inspectieListTable {
-    width: 100%;
     border-radius: 1rem;
     border-collapse: collapse;
   }
@@ -43,7 +51,6 @@
   }
   
   table {
-    width: 100%;
     background-color: white;
   }
   
@@ -69,38 +76,62 @@
   }
 
   .inspectieInput{
-    margin-bottom: 1.5vh;
-    align-items: center;
     width: 100%;
-    
+    height: 3rem;
+    font-family: 'Lexend Deca', sans-serif;
+    border-radius: 0.6rem;
+    border: #8E8E8E;
+    box-shadow: inset 0px 0px 3px 0px #8E8E8E;;
+    text-indent: 45px;
+    font-size: 16px;
+    margin-bottom: 17px;
+    margin-top: 4px;
+}
+
+.inspectieInputId{
+    height: 3rem;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 16px;
+    margin-top: 4px;
 }
 
   .inspectieSelect{
-    margin-bottom: 1.5vh;
     width: 100%;
-    height: 8vh;
-    border-radius: 15px;
-    color: #8E8E8E;
+    height: 3rem;
+    font-family: 'Lexend Deca', sans-serif;
+    border-radius: 0.6rem;
+    border: #8E8E8E;
+    box-shadow: inset 0px 0px 3px 0px #8E8E8E;;
+    text-indent: 45px;
+    font-size: 16px;
+    margin-bottom: 17px;
+    margin-top: 4px;
   }
 
 .inspectieInputTitel{
-  justify-content: left;
-  padding-left: 11px;
-  display: flex;
-  font-size: 14px;
-  font-family: 'Lexend Deca', sans-serif;
-  color: #8E8E8E;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #747474;
+    margin-bottom: 5vh;
 }
 
-.inspectieSubmitButton{
+
+button{
   background-color: #C61B00;
-  width: 100%;
-  height: 8vh;
-  margin-top: 2vh;
-  border-radius: 15px;
-  box-shadow: 0 4px 0 0 rgb(0 0 0 / 0.05);
-  border-style: none;
-  font-family: 'Lexend Deca', sans-serif;
-  color: white;
-  font-weight: bold;
+    width: 100%;
+    height: 50px;
+    border-radius: .6rem;
+    box-shadow: 0px 0px 20px -10px #c61a0047;
+    border-style: none;
+    font-family: 'Lexend Deca', sans-serif;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: 0.2s all;
+}
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 20px -10px #c61a00f5;
 }
