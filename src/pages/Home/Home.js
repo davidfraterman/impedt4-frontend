@@ -71,13 +71,13 @@ const Home = () => {
                 <section className={styles.mijnOverzichtContainer}>
                     <h2>Mijn overzicht</h2>
                     <section className={styles.mijnOverzichtData}>
-                        <p>Controleerbare bedrijven</p>
+                        <p>Aantal Relevant</p>
                         <p className={styles.mijnOverzichtDatapoint}>
                             {getAmountOfCompanies()}
                         </p>
                     </section>
                     <section className={styles.mijnOverzichtData}>
-                        <p>Aantal Relevant</p>
+                        <p>Controleerbare bedrijven</p>
                         <p className={styles.mijnOverzichtDatapoint}>
                             {getAmountOfRelevantCompanies()}
                         </p>
