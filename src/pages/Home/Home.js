@@ -31,7 +31,13 @@ const Home = () => {
     }
 
     const getAmountOfCompanies = () => {
-        return bedrijven.length;
+        let amount = 0;
+        bedrijven.map(company => {
+            if (company.relevant === 1) {
+                amount++;
+            }
+        });
+        return amount;
     }
 
     const getAmountOfRelevantCompanies = () => {
