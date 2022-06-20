@@ -143,11 +143,11 @@ button:hover{
   }
 
   .blue {
-    background-color: blue;
+    background-color: rgb(0, 0, 255);
   }
 
   .green {
-    background-color: green;
+    background-color: rgb(18, 240, 18);
 }
 
 .orange {
