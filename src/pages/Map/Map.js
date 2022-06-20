@@ -8,29 +8,8 @@ import 'leaflet/dist/leaflet.css';
 import "./Map.css";
 
 import * as ROUTES from '../../constants/routes'
-// import mapData from './geoJSON/bedrijven_normal_json.json'
 
 import L from 'leaflet';
-// import './MyMap.css';
-// const coords = () => {
-//   let data;
-//   axios.get('http://127.0.0.1:8000/api/bedrijven')
-//     .then(res => {
-//       const bedrijven = res.data;
-//       this.setState({bedrijven});
-//     })
-// console.log(data);
-//   let lat = data[id].latitude;
-//   let long = data[id].longitude;
-//   lat = parseFloat(lat.replace(",","."));
-//   long = parseFloat(long.replace(",","."));
-//   // coords.push(lat, long);
-//   coords = [lat, long];
-// return(coords);
-// }
-
-// import L from 'leaflet';
-
 
 class Map extends React.Component {
   constructor(props) {
@@ -84,7 +63,6 @@ class Map extends React.Component {
         console.log(error);
       });
   }
-
 
   getData() {
     return this.state.bedrijven
@@ -141,9 +119,6 @@ class Map extends React.Component {
                 </CircleMarker>
               </div>
             )
-          }
-          else {
-            console.log("je moeder is een plopkoek!")
           }
 
           //markers die toegevoegd zijn aan de to do list
@@ -226,10 +201,10 @@ class Map extends React.Component {
         }
 
         {this.state.showLegend &&
-        <section className="map_legend">
-          <section className="map_legend_closeIconWrapper">
+        <section className="map__legend">
+          <section className="map__legend__closeIconWrapper">
             <h2>Legenda</h2>
-            <Icon onClick={this.toggleLegend} className="map_legend_closeIcon" icon="ep:close-bold" color="var(--clr-black)" height="30" />
+            <Icon onClick={this.toggleLegend} className="map__legend__closeIcon" icon="ep:close-bold" color="var(--clr-black)" height="30" />
           </section>
             <div className="row">
               <p>Gecontroleerd</p>
