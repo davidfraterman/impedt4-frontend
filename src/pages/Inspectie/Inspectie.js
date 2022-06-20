@@ -36,30 +36,32 @@ const Inspectie = (props) => {
 
   return (
     <section className={styles.inspectieContainer}>
-      <section className={styles.inspectieTitleWrapper}>
-        <Icon icon="ant-design:plus-circle-filled" color="black" height="30" />
-        <h1 className={styles.inspectieTitle}>Nieuwe Record</h1>
-      </section>
+      <form className={styles.inspectieContainerForm} onSubmit={addToplan.bind(this, id)}>
 
-      <section className={styles.inspectieList}>
-        <h1 className={styles.inspectieInputTitel}>Bedrijfsnaam</h1>
-        <h1 className={styles.inspectieInput}> Bedrijf {id} </h1>
-      </section>
+        <section className={styles.inspectieTitleWrapper}>
+          <Icon icon="ant-design:plus-circle-filled" color="black" height="30" />
+          <h1 className={styles.inspectieTitle}>Nieuwe Record</h1>
+        </section>
 
-      <section className={styles.inspectieList}>
-        <label htmlFor="locatie" className={styles.inspectieInputTitel}>Locatie</label>
-        <select id="locatie" className={styles.inspectieSelect}>
-          <option>Eindhoven</option>
-        </select>
-      </section>
+        <section className={styles.inspectieList}>
+          <label className={styles.inspectieInputTitel}>Bedrijfsnaam</label>
+          <h1 className={styles.inspectieInputId}> Bedrijf {id} </h1>
+        </section>
 
-      <section className={styles.inspectieList}>
-        <label htmlFor="name" className={styles.inspectieInputTitel}>Naam inspecteur</label>
-        <input id="name" type="text" className={styles.inspectieInput} />
-      </section>
+        <section className={styles.inspectieList}>
+          <label htmlFor="locatie" className={styles.inspectieInputTitel}>Locatie</label>
+          <select id="locatie" className={styles.inspectieSelect}>
+            <option>Eindhoven</option>
+          </select>
+        </section>
 
-      <form onSubmit={addToplan.bind(this, id)}>
-                      <button type="submit">Submit</button>
+        <section className={styles.inspectieList}>
+          <label htmlFor="name" className={styles.inspectieInputTitel}>Naam inspecteur</label>
+          <input id="name" type="text" className={styles.inspectieInput} />
+        </section>
+
+        <button type="submit">Submit</button>
+
       </form>
 
     </section>
