@@ -44,6 +44,16 @@ const Home = () => {
         return amount;
     }
 
+    const getAmountOfCheckedCompanies = () => {
+        let amount = 0;
+        bedrijven.map(company => {
+            if (company.relevant === 1 && company.gepland === 1 && company.todo === 0 && company.plan === 1) {
+                amount++;
+            }
+        });
+        return amount;
+    }
+
     return (
         <>
             <article className={styles.container}>
@@ -70,6 +80,12 @@ const Home = () => {
                         <p>Aantal To-do's</p>
                         <p className={styles.mijnOverzichtDatapoint}>
                             {getAmountOfTodo()}
+                        </p>
+                    </section>
+                    <section className={styles.mijnOverzichtData}>
+                        <p>Aantal Gecontroleerd</p>
+                        <p className={styles.mijnOverzichtDatapoint}>
+                            {getAmountOfCheckedCompanies()}
                         </p>
                     </section>
 
