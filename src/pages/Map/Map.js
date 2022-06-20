@@ -158,7 +158,7 @@ class Map extends React.Component {
                   center={[parseFloat(data.latitude.replace(",", ".")), parseFloat(data.longitude.replace(",", "."))]}>
                   <Popup>
                     <h1>Bedrijf {data.id}</h1>
-                    <h2>Gecontroleerd!</h2>
+                    <h2 class="popup__gecontroleerdCard"><Icon icon="carbon:checkmark-filled" color="green" height="20" />Gecontroleerd!</h2>
                     <p>Info: {data.category}</p>
                     <p>Risicofactor: {data.riskindicator}%</p>
                   </Popup>

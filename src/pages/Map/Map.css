@@ -154,6 +154,17 @@ button:hover{
     background-color: orange;
 }
 
+.popup__gecontroleerdCard {
+    margin-top: 1rem;
+    color: green;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 0.8rem;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+}
+
 
 @keyframes legend__legendAppear {   
     0% {
