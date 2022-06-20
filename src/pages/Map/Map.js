@@ -211,17 +211,17 @@ class Map extends React.Component {
               <div className="dot green"></div>
             </div>
             <div className="row">
-              <p>Relevant</p>
+              <p>ToDo</p>
+              <div className="dot orange"></div>            
+              </div>
+            <div className="row">
+              <p>Controleerbaar</p>
               <div className="dot blue"></div>
             </div>
             <div className="row">
-              <p>Irrelevant</p>
+              <p>Niet controleerbaar</p>
               <div className="dot grey"></div>
             </div>
-            <div className="row">
-              <p>Gepland</p>
-              <div className="dot orange"></div>            
-              </div>
         </section>
         }
 
