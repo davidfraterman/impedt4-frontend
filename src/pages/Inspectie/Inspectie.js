@@ -36,14 +36,16 @@ const Inspectie = (props) => {
 
   return (
     <section className={styles.inspectieContainer}>
+      <form className={styles.inspectieContainerForm}>
+
       <section className={styles.inspectieTitleWrapper}>
         <Icon icon="ant-design:plus-circle-filled" color="black" height="30" />
         <h1 className={styles.inspectieTitle}>Nieuwe Record</h1>
       </section>
 
       <section className={styles.inspectieList}>
-        <h1 className={styles.inspectieInputTitel}>Bedrijfsnaam</h1>
-        <h1 className={styles.inspectieInput}> Bedrijf {id} </h1>
+        <label className={styles.inspectieInputTitel}>Bedrijfsnaam</label>
+        <h1 className={styles.inspectieInputId}> Bedrijf {id} </h1>
       </section>
 
       <section className={styles.inspectieList}>
@@ -60,6 +62,8 @@ const Inspectie = (props) => {
 
       <form onSubmit={addToplan.bind(this, id)}>
                       <button type="submit">Submit</button>
+      </form>
+
       </form>
 
     </section>
