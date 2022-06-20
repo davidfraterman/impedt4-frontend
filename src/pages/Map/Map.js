@@ -87,7 +87,7 @@ class Map extends React.Component {
                   fillOpacity={1}
                   center={[parseFloat(data.latitude.replace(",", ".")), parseFloat(data.longitude.replace(",", "."))]}>
                   <Popup>
-                    <h1>Bedrijf</h1>
+                    <h1>Bedrijf {data.id}</h1>
                     <p>Info: {data.category}</p>
                     <p>Risicofactor: {data.riskindicator}%</p>
                   </Popup>
@@ -108,7 +108,7 @@ class Map extends React.Component {
                   fillOpacity={1}
                   center={[parseFloat(data.latitude.replace(",", ".")), parseFloat(data.longitude.replace(",", "."))]}>
                   <Popup>
-                    <h1>Bedrijf</h1>
+                    <h1>Bedrijf {data.id}</h1>
                     <p>Info: {data.category}</p>
                     <p>Risicofactor: {data.riskindicator}%</p>
                     <form onSubmit={this.addTodo.bind(this, data.id)}>
@@ -157,7 +157,7 @@ class Map extends React.Component {
                   fillOpacity={1}
                   center={[parseFloat(data.latitude.replace(",", ".")), parseFloat(data.longitude.replace(",", "."))]}>
                   <Popup>
-                    <h1>Bedrijf</h1>
+                    <h1>Bedrijf {data.id}</h1>
                     <h2>Gecontroleerd!</h2>
                     <p>Info: {data.category}</p>
                     <p>Risicofactor: {data.riskindicator}%</p>
